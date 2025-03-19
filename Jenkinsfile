@@ -6,7 +6,7 @@ pipeline{
                     git url:"https://github.com/lacchukav/file1.git" , branch:"main"
                 }
             }
-            stage ('dependiency'{
+            stage ('dependiency'){
                 steps{
                     bat '''
                     pyhton -m venv venv
