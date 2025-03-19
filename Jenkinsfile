@@ -9,28 +9,28 @@ pipeline{
         stage ('dependiency'){
             steps{
                 bat '''
-                pyhton -m venv venv
-                call venv\\scripts\\activate
-                python -m pip install --upgrage pip
-                pip install pytest
-                '''
+                    pyhton -m venv venv
+                    call venv\\scripts\\activate
+                    python -m pip install --upgrage pip
+                    pip install pytest
+                    '''
 
             }
         }
         stage ('test'){
             steps{
                 bat '''
-                call venv\\scripts\\activate
-                pytest test.py
-                '''
+                    call venv\\scripts\\activate
+                    pytest test.py
+                    '''
             }
         }
         stage ('deploy'){
             steps{
                 bat '''
-                call venv\\scripts\\activate
-                python adding.py
-                '''
+                    call venv\\scripts\\activate
+                    python adding.py
+                    '''
 
             }
         }
